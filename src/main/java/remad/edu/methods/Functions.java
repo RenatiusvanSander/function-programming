@@ -47,6 +47,14 @@ public class Functions {
     System.out.println(triple_2.apply(4));
 
     System.out.println(compose(triple_2, square_2));
+
+    FunctionClazz<Integer, Integer> triple_3 = (Integer x) -> x * 3;
+    FunctionClazz<Integer, Integer> square_3 = (Integer y) -> y * 3;
+
+    System.out.println(triple_3.apply(4));
+    System.out.println(triple_3.apply(2));
+
+    System.out.println(composeByLambda(triple_3, square_3));
   }
 
   /**
@@ -80,5 +88,18 @@ public class Functions {
         return f1.apply(f2.apply(arg));
       }
     };
+  }
+
+  /**
+   * Composes by using lambdas
+   *
+   * @param f1 the function 1
+   * @param f2 the function 2
+   * @return the composed {@link FunctionClazz}
+   */
+  public static FunctionClazz<Integer, Integer> composeByLambda(
+      final FunctionClazz<Integer, Integer> f1,
+      final FunctionClazz<Integer, Integer> f2) {
+    return arg -> f1.apply(f2.apply(arg));
   }
 }
