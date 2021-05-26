@@ -1,4 +1,4 @@
-package remad.edu.methods;
+package edu.remad.functionalprogramming.functionalprogramming;
 
 /**
  * The class represents a payment.
