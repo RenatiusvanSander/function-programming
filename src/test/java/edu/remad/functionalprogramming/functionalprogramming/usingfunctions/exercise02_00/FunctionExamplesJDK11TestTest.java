@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 public class FunctionExamplesJDK11TestTest {
 
   /**
-   * Tests applz 2 returns 6 as result.
+   * Tests apply 2 returns 6 as result.
    */
   @Test
   void shouldApplyTwoReturnSix() {
