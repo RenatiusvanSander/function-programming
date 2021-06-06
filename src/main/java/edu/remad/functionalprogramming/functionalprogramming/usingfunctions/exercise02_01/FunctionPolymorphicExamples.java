@@ -8,7 +8,7 @@ public class FunctionPolymorphicExamples {
   /**
    * Function multiplies argument with 3.
    */
-  Function<Integer, Integer> triple = new Function<>() {
+  public static final Function<Integer, Integer> triple = new Function<>() {
 
     @Override
     public Integer apply(Integer arg) {
@@ -19,7 +19,7 @@ public class FunctionPolymorphicExamples {
   /**
    * Function multiplies argument with itself.
    */
-  Function<Integer, Integer> square = new Function<>() {
+  public static final Function<Integer, Integer> square = new Function<>() {
 
     @Override
     public Integer apply(Integer arg) {
@@ -28,7 +28,7 @@ public class FunctionPolymorphicExamples {
   };
 
   /**
-   * Composes two instances of {@link Function<Integer, Integer>}.
+   * Composes two instances of {@code Function<Integer, Integer>}.
    *
    * @param f1 function 1
    * @param f2 function 2
