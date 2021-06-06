@@ -19,5 +19,5 @@ public class FunctionalSeveralArgumentsExamplesJDK11 {
   /**
    * multiply two functions
    */
-  public static final BinaryOperator multOp = x -> y -> x * y;
+  public static final BinaryOperator mult = x -> y -> x * y;
 }
