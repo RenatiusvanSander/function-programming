@@ -1,5 +1,7 @@
 package edu.remad.functionalprogramming.functionalprogramming.usingfunctions.exercise02_04;
 
+import edu.remad.functionalprogramming.functionalprogramming.usingfunctions.exercise02_06.Function;
+
 public class HigherOrderFunctionExample {
 
   /**
