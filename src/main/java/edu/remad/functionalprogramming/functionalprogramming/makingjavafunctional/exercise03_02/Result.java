@@ -23,18 +23,18 @@ public interface Result<T> {
    * @param <T> type of class
    * @return failure
    */
-  public static <T> Result<T> failure(String message) {
+  static <T> Result<T> failure(String message) {
     return new Failure<>(message);
   }
 
   /**
    * Success
    *
-   * @param value valu to set
+   * @param value value to set
    * @param <T> type of class
    * @return success
    */
-  public static <T> Result<T> success(T value) {
+  static <T> Result<T> success(T value) {
     return new Success<>(value);
   }
 

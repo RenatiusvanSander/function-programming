@@ -3,13 +3,11 @@ package edu.remad.functionalprogramming.functionalprogramming.makingjavafunction
 /**
  * the functional interface
  */
-public interface Function {
+public interface Function<T, U> {
 
   /**
-   * Applies
-   *
-   * @param arg the argument, can be whatever zou choose
-   * @return applied value
+   * @param arg argument
+   * @return the type of U
    */
-  int apply(int arg);
+  U apply(T arg);
 }
