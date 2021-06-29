@@ -1,5 +1,7 @@
 package edu.remad.functionalprogramming.functionalprogramming.makingjavafunctional.exercise03_02;
 
+import java.util.Objects;
+
 /**
  * the result can be instance of {@link Success} or {@link Failure}
  *
@@ -50,6 +52,13 @@ public interface Result<T> {
      */
     private final T value;
 
+    @Override
+    public String toString() {
+      return "Success{" +
+          "value=" + value +
+          '}';
+    }
+
     /**
      * Constructor
      *
@@ -63,6 +72,23 @@ public interface Result<T> {
     public void bind(
         Effect<T> success, Effect<String> failure) {
       success.apply(value);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof Success)) {
+        return false;
+      }
+      Success<?> success = (Success<?>) o;
+      return value.equals(success.value);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(value);
     }
   }
 
@@ -89,6 +115,31 @@ public interface Result<T> {
     public void bind(
         Effect<T> success, Effect<String> failure) {
       failure.apply(this.errorMessage);
+    }
+
+    @Override
+    public String toString() {
+      return "Failure{" +
+          "errorMessage='" + errorMessage + '\'' +
+          '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof Failure)) {
+        return false;
+      }
+      Failure<T> failure = (Failure<T>) o;
+
+      return errorMessage.equals(failure.errorMessage);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(errorMessage);
     }
   }
 

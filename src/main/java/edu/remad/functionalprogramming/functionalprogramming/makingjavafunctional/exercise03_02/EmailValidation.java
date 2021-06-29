@@ -43,6 +43,11 @@ public class EmailValidation {
       mcase(() -> !emailPattern.matcher(s).matches(),
           () -> failure("email " + s + " is invalid.")));
 
+  /**
+   * main method
+   *
+   * @param args the arguments
+   */
   public static void main(String... args) {
     emailChecker.apply("this.is@mz.email").bind(success, failure);
     emailChecker.apply(null).bind(success, failure);
